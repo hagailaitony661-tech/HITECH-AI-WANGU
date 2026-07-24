@@ -32,7 +32,7 @@ if prompt := st.chat_input("Andika ujumbe wako hapa..."):
         try:
             with st.spinner("⏳ HITECH AI inakifikiri..."):
                 response = client.models.generate_content(
-                    model="gemini-2.0-flash",
+                    model="gemini-1.5-flash",
                     contents=prompt,
                     config={
                         "system_instruction": "Wewe ni HITECH AI, msaidizi wa kidijitali mwenye akili sana, mchangamfu, na unayejibu kwa Kiswahili fasaha, kirafiki na kwa ufasaha wa hali ya juu."
