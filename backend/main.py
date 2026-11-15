@@ -7,6 +7,7 @@ from typing import Optional
 
 import requests
 from fastapi import FastAPI, Depends, Header, HTTPException, UploadFile, File
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -73,6 +74,9 @@ def ollama_get(path: str):
 
 @app.get("/")
 def root():
+    dashboard = APP_DIR.parent / "docs" / "index.html"
+    if dashboard.exists():
+        return FileResponse(dashboard)
     return {"name": "HAGAI AI CLOUD API", "version": "1.0.0", "docs": "/docs"}
 
 @app.get("/api/health")
