@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="sw">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<title>HAGAI AI CLOUD</title>
+<style>
+:root{--bg:#08111f;--panel:#101d30;--panel2:#142640;--line:#263b58;--txt:#edf5ff;--muted:#91a5c1;--blue:#4b83ff;--cyan:#48d9e8;--green:#37d6a0;--amber:#e9bd65}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px Inter,system-ui,Arial,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.side{width:245px;position:fixed;inset:0 auto 0 0;background:#0b1728;border-right:1px solid var(--line);padding:22px 14px;overflow:auto}.logo{font-weight:900;font-size:20px;letter-spacing:1px;padding:5px 9px 24px}.logo b{color:var(--cyan)}.logo small{display:block;font-size:9px;color:var(--muted);letter-spacing:2px;margin-top:6px}.navlabel{font-size:10px;color:#7187a6;letter-spacing:1.5px;padding:15px 10px 7px}.nav{display:block;width:100%;border:0;background:transparent;color:#b8c7dc;text-align:left;padding:11px 12px;border-radius:8px;margin:3px 0}.nav:hover,.nav.on{background:#1a3151;color:white}.nav.on{box-shadow:inset 3px 0 var(--cyan)}.sidefoot{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:28px;color:var(--muted);font-size:11px;line-height:1.7}.main{margin-left:245px;width:calc(100% - 245px);padding:24px 30px;max-width:1600px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.top h1{font-size:20px;margin:0}.top p{font-size:12px;color:var(--muted);margin:5px 0}.pill{font-size:10px;padding:8px 11px;border-radius:30px;background:#16352f;color:var(--green)}.hamb{display:none;background:#1b304c;border:0;color:white;border-radius:7px;padding:9px}.hero{border:1px solid #294a73;border-radius:16px;padding:28px;background:radial-gradient(circle at 90% 15%,#244a72 0,transparent 40%),linear-gradient(120deg,#142b4d,#111d35);margin-bottom:18px}.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:2px}.hero h2{font-size:29px;margin:12px 0}.hero h2 span{color:var(--cyan)}.hero p{color:#c0cfe3;line-height:1.7;max-width:680px}.btn{background:var(--blue);border:0;border-radius:8px;padding:10px 14px;color:white;font-weight:700;font-size:12px}.btn.alt{background:#203957;border:1px solid #385578}.btn.danger{background:#783e48}.btn:disabled{opacity:.5;cursor:not-allowed}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 24px}.card,.feature,.formcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:17px}.muted{color:var(--muted)}.statname{font-size:10px;color:var(--muted)}.statnum{font-size:24px;font-weight:800;margin:9px 0}.section{display:none}.section.active{display:block}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 14px}.head h2{font-size:18px;margin:0}.head p{font-size:11px;color:var(--muted);margin:5px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.feature h3{font-size:14px;margin:9px 0}.feature p{font-size:12px;color:var(--muted);line-height:1.65}.feature .ico{font-size:22px}.notice{padding:12px 14px;border:1px solid #66552e;background:#2a2418;color:#efd28b;border-radius:9px;font-size:11px;line-height:1.7;margin:12px 0}.good{border-color:#245e50;background:#102b29;color:#a6ead6}.formcard{max-width:760px;margin:14px 0}.field{margin:13px 0}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.field input,.field textarea,.field select,.inlineinput{width:100%;background:#091525;color:white;border:1px solid var(--line);border-radius:8px;padding:11px;outline:none}.field textarea{min-height:85px}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.row input{flex:1}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}table{border-collapse:collapse;width:100%;min-width:480px}td,th{padding:12px;text-align:left;border-bottom:1px solid var(--line);font-size:11px}th{color:var(--muted)}.empty{text-align:center;color:var(--muted);padding:24px}.chat{height:340px;overflow:auto;background:#071321;border:1px solid var(--line);border-radius:10px;padding:13px;margin:12px 0}.bubble{max-width:88%;background:#172d49;padding:11px 13px;border-radius:10px;margin:8px 0;white-space:pre-wrap;line-height:1.6;font-size:12px}.bubble.user{margin-left:auto;background:#214a78}.bubble.err{background:#48262e}.footer{text-align:center;color:#627995;font-size:10px;margin:35px 0 12px}.small{font-size:10px;color:var(--muted)}.hidden{display:none!important}
+@media(max-width:800px){.side{transform:translateX(-105%);z-index:5;transition:.2s}.side.open{transform:translateX(0)}.main{margin:0;width:100%;padding:16px}.hamb{display:inline-block}.stats{grid-template-columns:repeat(2,1fr)}.hero h2{font-size:23px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" id="side">
+ <div class="logo">HAGAI <b>AI</b> CLOUD<small>HAGAI TECHNOLOGY LTD</small></div>
+ <div class="navlabel">DASHBOARD</div>
+ <button class="nav on" data-page="home">⌂ Muhtasari</button>
+ <button class="nav" data-page="play">✧ AI Playground</button>
+ <button class="nav" data-page="models">◈ Model Library</button>
+ <div class="navlabel">MAENDELEO YA AI</div>
+ <button class="nav" data-page="datasets">▤ Datasets</button>
+ <button class="nav" data-page="training">⚙ Training</button>
+ <button class="nav" data-page="deploy">☁ Deployment</button>
+ <div class="navlabel">MIUNDOMBINU</div>
+ <button class="nav" data-page="api">⌘ API & Muunganisho</button>
+ <button class="nav" data-page="server">▣ Hali ya Seva</button>
+ <button class="nav" data-page="settings">⚙ Mipangilio</button>
+ <div class="sidefoot">HAGAI AI CLOUD<br>Toleo la mwanzo · Hybrid<br><span id="sideStatus">Backend haijaunganishwa</span></div>
+</aside>
+<main class="main">
+<header class="top">
+ <div class="row"><button class="hamb" id="hamb">☰</button><div><h1 id="title">Muhtasari</h1><p>Jukwaa lako la kusimamia modeli za akili bandia.</p></div></div>
+ <span class="pill" id="statusPill">● Dashboard iko tayari</span>
+</header>
+
+<section class="section active" id="home">
+ <div class="hero"><div class="eyebrow">PRIVATE AI WORKSPACE · HYBRID CLOUD</div>
+ <h2>Karibu <span>HAGAI AI CLOUD</span></h2>
+ <p>Simamia modeli zako, jaribu mazungumzo na AI, na unganisha seva yako ya Ollama. Dashboard hii ni sehemu ya mbele; majibu halisi ya AI yanahitaji backend na seva ya modeli kufanya kazi.</p>
+ <button class="btn" onclick="go('play')">Fungua AI Playground →</button></div>
+ <div class="stats">
+  <div class="card"><div class="statname">MODELI ZINAZOONEKANA</div><div class="statnum" id="modelCount">--</div><div class="small">Kutoka Ollama</div></div>
+  <div class="card"><div class="statname">DATASETS ZILIZOHIFADHIWA</div><div class="statnum" id="datasetCount">0</div><div class="small">Kwenye backend</div></div>
+  <div class="card"><div class="statname">AI ENGINE</div><div class="statnum" id="engineState" style="font-size:16px">HAIJAUNGANISHWA</div><div class="small">Hali ya muunganisho</div></div>
+  <div class="card"><div class="statname">BACKEND</div><div class="statnum" id="backendState" style="font-size:16px">OFFLINE</div><div class="small">FastAPI</div></div>
+ </div>
+ <div class="head"><div><h2>Vituo vya kazi</h2><p>Chagua sehemu unayotaka kutumia.</p></div></div>
+ <div class="grid">
+  <div class="feature"><div class="ico">✧</div><h3>AI Playground</h3><p>Ongea na modeli inayopatikana kwenye seva yako ya Ollama.</p><button class="btn alt" onclick="go('play')">Fungua</button></div>
+  <div class="feature"><div class="ico">◈</div><h3>Model Library</h3><p>Angalia modeli zilizopakuliwa na pakua modeli mpya kupitia Ollama.</p><button class="btn alt" onclick="go('models')">Fungua</button></div>
+  <div class="feature"><div class="ico">▤</div><h3>Dataset Manager</h3><p>Pakia na hifadhi faili za data kwa maandalizi ya baadaye.</p><button class="btn alt" onclick="go('datasets')">Fungua</button></div>
+  <div class="feature"><div class="ico">⌘</div><h3>API & Muunganisho</h3><p>Angalia anwani ya API na maelekezo ya kuunganisha programu zako.</p><button class="btn alt" onclick="go('api')">Fungua</button></div>
+ </div>
+</section>
+
+<section class="section" id="play">
+ <div class="head"><div><h2>AI Playground</h2><p>Jaribu modeli yako kwa mazungumzo.</p></div></div>
+ <div class="row"><div style="flex:1"><div class="field"><label>Chagua modeli</label><select id="chatModel"><option value="">Unganisha backend kwanza</option></select></div></div></div>
+ <div class="chat" id="chat"><div class="bubble">HAGAI AI CLOUD: Unganisha backend, weka API key na chagua modeli ili kuanza.</div></div>
+ <div class="row"><input class="inlineinput" id="prompt" placeholder="Andika ujumbe wako..." /><button class="btn" id="send">Tuma</button></div>
+ <p class="small">Majibu hutoka kwenye modeli iliyochaguliwa kupitia Ollama; hakuna AI ya majaribio inayojifanya imejibu.</p>
+</section>
+
+<section class="section" id="models">
+ <div class="head"><div><h2>Model Library</h2><p>Modeli zilizopo kwenye Ollama na kupakua nyingine.</p></div><button class="btn alt" id="refreshModels">Sasisha</button></div>
+ <div class="formcard"><div class="field"><label>Jina la modeli ya Ollama (mfano: llama3.2:1b)</label><input id="pullName" placeholder="llama3.2:1b"></div><button class="btn" id="pullBtn">Pakua modeli</button><p class="small">Ukubwa wa modeli hutegemea modeli utakayochagua na nafasi ya diski pamoja na RAM.</p><div id="pullStatus" class="small"></div></div>
+ <div class="tablewrap"><table><thead><tr><th>MODELI</th><th>UKUBWA</th><th>FAMILIA</th></tr></thead><tbody id="modelRows"><tr><td colspan="3" class="empty">Unganisha backend ili kuona modeli.</td></tr></tbody></table></div>
+</section>
+
+<section class="section" id="datasets">
+ <div class="head"><div><h2>Dataset Manager</h2><p>Hifadhi faili za maandalizi ya data.</p></div></div>
+ <div class="notice">Kwa sasa tunahifadhi faili na metadata. Mafunzo ya modeli (fine-tuning) ni hatua tofauti inayohitaji backend ya mafunzo na rasilimali za kompyuta.</div>
+ <div class="formcard"><div class="field"><label>Chagua faili (TXT, CSV au JSONL; hadi 10MB)</label><input type="file" id="datasetFile" accept=".txt,.csv,.jsonl"></div><button class="btn" id="uploadDataset">Pakia dataset</button><div id="uploadStatus" class="small"></div></div>
+ <div class="tablewrap"><table><thead><tr><th>JINA LA FAILI</th><th>UKUBWA</th><th>TAREHE</th></tr></thead><tbody id="datasetRows"><tr><td colspan="3" class="empty">Hakuna dataset.</td></tr></tbody></table></div>
+</section>
+
+<section class="section" id="training">
+ <div class="head"><div><h2>Kituo cha Training</h2><p>Maandalizi ya kufundisha au kuboresha modeli.</p></div></div>
+ <div class="notice">Kituo hiki bado hakitekelezi fine-tuning. Tunahitaji kuweka mazingira ya mafunzo yanayolingana na modeli, GPU/CPU, RAM na ukubwa wa dataset. Hatutatoa taarifa ya “training imekamilika” bila kazi halisi kufanyika.</div>
+ <div class="grid"><div class="feature"><h3>Fine-tuning</h3><p>Hatua ijayo: kuunganisha zana za LoRA/QLoRA pale hardware itakapotosha.</p></div><div class="feature"><h3>Dataset validation</h3><p>Kagua muundo, encoding na ubora wa dataset kabla ya mafunzo.</p></div></div>
+</section>
+
+<section class="section" id="deploy">
+ <div class="head"><div><h2>Deployment</h2><p>Kuweka AI yako ipatikane kupitia mtandao.</p></div></div>
+ <div class="notice">Dashboard inaweza kuchapishwa kama tovuti tuli. Ili AI ifikiwe popote, backend na Ollama lazima ziwe kwenye seva inayopatikana mtandaoni. Kompyuta ya nyumbani ikizimwa au intaneti ikikatika, AI yako haitapatikana.</div>
+ <div class="feature"><h3>Muundo wa Hybrid</h3><p>Dashboard (web) → FastAPI backend → Ollama model server. Tumia HTTPS na API key. Usifungue Ollama moja kwa moja kwenye intaneti; pitisha maombi kupitia backend iliyolindwa.</p></div>
+</section>
+
+<section class="section" id="api">
+ <div class="head"><div><h2>API & Muunganisho</h2><p>Unganisha dashboard na backend yako.</p></div></div>
+ <div class="formcard"><div class="field"><label>Anwani ya Backend API</label><input id="apiBase" placeholder="https://your-backend.example.com"></div><div class="field"><label>API key (haitawekwa kwenye code)</label><input id="apiKey" type="password" placeholder="Weka HAGAI_API_KEY"></div><div class="row"><button class="btn" id="saveConnection">Hifadhi kwenye session</button><button class="btn alt" id="testConnection">Jaribu muunganisho</button></div><p class="small">API key huhifadhiwa kwenye session ya kivinjari hiki tu na huondoka unapofunga session. Usitumie dashboard hii kwa watumiaji wengi bila kuongeza mfumo wa akaunti na ruhusa.</p><div id="connectionResult" class="small"></div></div>
+ <div class="feature"><h3>API endpoint</h3><code>/api/chat</code><p>Tumia POST yenye Bearer token na JSON: { "model": "llama3.2:1b", "message": "Habari" }.</p></div>
+</section>
+
+<section class="section" id="server">
+ <div class="head"><div><h2>Hali ya Seva</h2><p>Ukaguzi wa FastAPI na Ollama.</p></div><button class="btn alt" id="checkServer">Kagua sasa</button></div>
+ <div class="grid"><div class="card"><div class="statname">BACKEND</div><div class="statnum" id="serverBackend">--</div></div><div class="card"><div class="statname">OLLAMA</div><div class="statnum" id="serverOllama">--</div></div></div>
+ <div class="notice">Vipimo vya CPU, RAM na GPU vitaongezwa kwenye toleo linalofuata baada ya kuweka telemetry ya seva.</div>
+</section>
+
+<section class="section" id="settings">
+ <div class="head"><div><h2>Mipangilio</h2><p>Utambulisho wa jukwaa.</p></div></div>
+ <div class="formcard"><div class="field"><label>Jina la jukwaa</label><input value="HAGAI AI CLOUD" readonly></div><div class="field"><label>Mmiliki</label><input value="HAGAI TECHNOLOGY LTD" readonly></div><div class="field"><label>Aina</label><input value="Hybrid AI Model Hosting Platform" readonly></div><button class="btn alt" id="clearSession">Ondoa API key kwenye session</button></div>
+</section>
+<footer class="footer">© 2026 HAGAI AI CLOUD · POWERED BY HAGAI TECHNOLOGY LTD</footer>
+</main></div>
+<script>
+const labels={home:"Muhtasari",play:"AI Playground",models:"Model Library",datasets:"Datasets",training:"Training",deploy:"Deployment",api:"API & Muunganisho",server:"Hali ya Seva",settings:"Mipangilio"};
+const $=id=>document.getElementById(id);
+function go(id){document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("on",x.dataset.page===id));$("title").textContent=labels[id];$("side").classList.remove("open");}
+document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>go(b.dataset.page));
+$("hamb").onclick=()=>$("side").classList.toggle("open");
+function base(){return ($("apiBase").value||sessionStorage.getItem("hagai_api_base")||"").trim().replace(/\/$/,"")}
+function key(){return $("apiKey").value||sessionStorage.getItem("hagai_api_key")||""}
+function headers(){return {"Content-Type":"application/json","Authorization":"Bearer "+key()}}
+function setState(ok){$("statusPill").textContent=ok?"● Backend imeunganishwa":"● Backend haijaunganishwa";$("statusPill").style.background=ok?"#16352f":"#3a2c1c";$("statusPill").style.color=ok?"#37d6a0":"#e9bd65";$("sideStatus").textContent=ok?"Backend imeunganishwa":"Backend haijaunganishwa";$("backendState").textContent=ok?"ONLINE":"OFFLINE"}
+async function api(path,opts={}){if(!base())throw Error("Weka Backend API URL kwenye API & Muunganisho.");const r=await fetch(base()+path,{...opts,headers:{...headers(),...(opts.headers||{})}});const data=await r.json().catch(()=>({detail:"Jibu la seva halijasomeka"}));if(!r.ok)throw Error(data.detail||("HTTP "+r.status));return data}
+async function health(){try{const h=await fetch(base()+"/api/health");const d=await h.json();setState(true);$("serverBackend").textContent="ONLINE";$("serverOllama").textContent=d.ollama?"ONLINE":"OFFLINE";$("engineState").textContent=d.ollama?"IMEUNGANISHWA":"OLLAMA OFFLINE";return d}catch(e){setState(false);$("serverBackend").textContent="OFFLINE";$("serverOllama").textContent="OFFLINE";$("engineState").textContent="HAIJAUNGANISHWA";throw e}}
+async function loadModels(){try{const d=await api("/api/models");const rows=$("modelRows");rows.innerHTML="";const sel=$("chatModel");sel.innerHTML="";d.models.forEach(m=>{let tr=document.createElement("tr");[m.name,m.size_human||"--",m.family||"--"].forEach(v=>{let td=document.createElement("td");td.textContent=v;tr.appendChild(td)});rows.appendChild(tr);let op=document.createElement("option");op.value=m.name;op.textContent=m.name;sel.appendChild(op)});if(!d.models.length)rows.innerHTML='<tr><td colspan="3" class="empty">Hakuna modeli iliyopakuliwa bado.</td></tr>';$("modelCount").textContent=d.models.length}catch(e){$("modelRows").innerHTML='<tr><td colspan="3" class="empty">Imeshindikana: '+escapeHtml(e.message)+'</td></tr>';$("modelCount").textContent="--"}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function bubble(text,kind=""){let d=document.createElement("div");d.className="bubble "+kind;d.textContent=text;$("chat").appendChild(d);$("chat").scrollTop=$("chat").scrollHeight}
+$("saveConnection").onclick=()=>{sessionStorage.setItem("hagai_api_base",$("apiBase").value.trim());sessionStorage.setItem("hagai_api_key",$("apiKey").value);$("connectionResult").textContent="Muunganisho umehifadhiwa kwenye session hii.";};
+$("testConnection").onclick=async()=>{try{await health();await loadModels();await loadDatasets();$("connectionResult").textContent="Muunganisho umefanikiwa."}catch(e){$("connectionResult").textContent=e.message}};
+$("checkServer").onclick=async()=>{try{await health();await loadModels()}catch(e){bubble("Ukaguzi: "+e.message,"err")}};
+$("refreshModels").onclick=loadModels;
+$("send").onclick=async()=>{let message=$("prompt").value.trim(),model=$("chatModel").value;if(!message)return;if(!model){bubble("Chagua modeli kwanza.","err");return}bubble(message,"user");$("prompt").value="";$("send").disabled=true;try{const d=await api("/api/chat",{method:"POST",body:JSON.stringify({model,message})});bubble(d.response||"Hakuna jibu lililorudishwa.")}catch(e){bubble("Hitilafu: "+e.message,"err")}finally{$("send").disabled=false}};
+$("prompt").addEventListener("keydown",e=>{if(e.key==="Enter")$("send").click()});
+$("pullBtn").onclick=async()=>{let name=$("pullName").value.trim();if(!name)return;$("pullBtn").disabled=true;$("pullStatus").textContent="Inaomba seva ipakue modeli...";try{await api("/api/models/pull",{method:"POST",body:JSON.stringify({name})});$("pullStatus").textContent="Ombi la upakuaji limekamilika.";await loadModels()}catch(e){$("pullStatus").textContent=e.message}finally{$("pullBtn").disabled=false}};
+async function loadDatasets(){try{let d=await api("/api/datasets");$("datasetCount").textContent=d.datasets.length;$("datasetRows").innerHTML="";d.datasets.forEach(x=>{let tr=document.createElement("tr");[x.filename,x.size_human,x.created_at].forEach(v=>{let td=document.createElement("td");td.textContent=v;tr.appendChild(td)});$("datasetRows").appendChild(tr)});if(!d.datasets.length)$("datasetRows").innerHTML='<tr><td colspan="3" class="empty">Hakuna dataset.</td></tr>'}catch(e){$("datasetRows").innerHTML='<tr><td colspan="3" class="empty">Backend haijaunganishwa.</td></tr>'}}
+$("uploadDataset").onclick=async()=>{let f=$("datasetFile").files[0];if(!f)return;$("uploadStatus").textContent="Inapakia...";try{let form=new FormData();form.append("file",f);let r=await fetch(base()+"/api/datasets",{method:"POST",headers:{"Authorization":"Bearer "+key()},body:form});let d=await r.json();if(!r.ok)throw Error(d.detail||"Upload imeshindikana");$("uploadStatus").textContent="Dataset imehifadhiwa.";await loadDatasets()}catch(e){$("uploadStatus").textContent=e.message}};
+$("clearSession").onclick=()=>{sessionStorage.removeItem("hagai_api_key");sessionStorage.removeItem("hagai_api_base");$("apiKey").value="";$("apiBase").value="";$("connectionResult").textContent="API key imeondolewa kwenye session."};
+$("apiBase").value=sessionStorage.getItem("hagai_api_base")||"";$("apiKey").value=sessionStorage.getItem("hagai_api_key")||"";
+if(base())health().then(loadModels).then(loadDatasets).catch(()=>setState(false));
+</script></body></html>
