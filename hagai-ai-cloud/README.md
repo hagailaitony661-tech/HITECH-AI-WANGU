@@ -11,7 +11,13 @@ HAGAI AI CLOUD ni mwanzo wa jukwaa la Hybrid AI: dashboard ya wavuti, FastAPI ba
 ## Muhimu kuhusu gharama na uwezo
 Programu hizi ni open-source, lakini hosting, GPU, umeme, storage na intaneti si bure bila kikomo. GitHub Pages inahost dashboard tuli tu; haiendeshi FastAPI au Ollama. Kwa matumizi ya AI ya 24/7, backend na Ollama lazima viwe kwenye mashine/seva inayowashwa na kuunganishwa na intaneti. Kompyuta ikizimwa, AI haitapatikana.
 
-## Kuendesha kwenye kompyuta yako
+## Kuendesha kwenye kompyuta ya Windows (njia rahisi)
+1. Pakua repository kama ZIP kupitia GitHub: Code → Download ZIP, kisha fungua ZIP.
+2. Sakinisha Python 3.11+ na Ollama.
+3. Fungua folda `backend` na bofya mara mbili `start_windows.bat`. Script itaweka dependencies, itatengeneza API key ya session na kufungua dashboard kwenye `http://127.0.0.1:8000`.
+4. Weka API key iliyoonyeshwa kwenye sehemu API & Muunganisho ya dashboard. Acha dirisha la terminal wazi wakati unatumia AI.
+
+## Njia ya kuanzisha kwa mkono
 1. Sakinisha Python 3.11+ na Ollama.
 2. Pakua modeli ndogo inayolingana na RAM yako, kwa mfano `ollama pull llama3.2:1b` (inahitaji nafasi ya diski na RAM; usijaribu kama kifaa hakina nafasi).
 3. Ingia kwenye folda `backend`, tengeneza virtual environment na sakinisha dependencies:
